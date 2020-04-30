@@ -2,7 +2,7 @@ FROM armada8040:linaro_gcc
 # https://developer.solid-run.com/knowledge-base/armada-8040-machiatobin-u-boot-and-atf/
 # Build specific deps
 RUN apt-get update &&\
-  apt-get install $APT_FLAGS bison flex openssl openssl-dev &&\
+  apt-get install $APT_FLAGS bison flex openssl libssl-dev &&\
   apt-get autoremove $APT_FLAGS && apt-get clean $APT_FLAGS &&\
   rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/*
 
@@ -33,11 +33,9 @@ WORKDIR /build/atf-marvell
 RUN make PLAT=a80x0_mcbin MV_DDR_PATH=../mv-ddr-marvell SCP_BL2=/dev/null clean &&\
   make PLAT=a80x0_mcbin MV_DDR_PATH=../mv-ddr-marvell SCP_BL2=../binaries-marvell/mrvl_scp_bl2.img BL33=../u-boot/u-boot.bin all fip
 
-# Copy image to host
-VOLUME /build/host
-CMD ["/usr/bin/cp", "/build/atf-marvell/build/a80x0_mcbin/release/flash-image.bin", "/build/host/flash-image.bin" ]
-
 # cp uboot.dockerfile dockerfile
 # docker build --rm --force-rm -t armada8040:uboot .
-# docker run -ti --rm -v .:/build/host:rw armada8040:uboot
+# docker run -ti --name uboot armada8040:uboot
+# docker cp uboot:/build/atf-marvell/build/a80x0_mcbin/release/flash-image.bin ./images/
+# docker rm uboot
 # docker rmi armada8040:uboot

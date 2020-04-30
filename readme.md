@@ -14,5 +14,15 @@ docker build --rm --force-rm -t armada8040:linaro_gcc .
 ```sh
 cd uboot
 docker build --rm --force-rm -t armada8040:uboot .
-docker run -ti --rm -v ${pwd}:/build/host:rw armada8040:uboot
+docker run -ti --name uboot armada8040:uboot
+docker cp uboot:/build/atf-marvell/build/a80x0_mcbin/release/flash-image.bin ./images/
+docker rm uboot
+docker rmi armada8040:uboot
+```
+
+### Building PfSense
+
+```sh
+cd pfsense
+docker build --rm --force-rm -t armada8040:pfsense .
 ```
