@@ -1,0 +1,15 @@
+[submodule "u-boot"]
+	path = u-boot
+	url = http://git.denx.de/u-boot.git
+[submodule "atf-marvell"]
+	path = atf-marvell
+	url = https://github.com/MarvellEmbeddedProcessors/atf-marvell.git
+	branch = atf-v1.5-armada-18.12
+[submodule "mv-ddr-marvell"]
+	path = mv-ddr-marvell
+	url = https://github.com/MarvellEmbeddedProcessors/mv-ddr-marvell.git
+	branch = mv_ddr-armada-18.12
+[submodule "binaries-marvell"]
+	path = binaries-marvell
+	url = https://github.com/MarvellEmbeddedProcessors/binaries-marvell.git
+	branch = binaries-marvell-armada-18.12
