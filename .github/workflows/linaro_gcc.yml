@@ -22,6 +22,6 @@ jobs:
         usedocker: true
         appdir: linaro
         remote_branch: "main"
-        docker_build_args: -t armada8040:linaro_gcc --recursive
+        docker_build_args: -t armada8040:linaro_gcc
         dontuseforce: true
-        stack: "armada8040"
+        #stack: "armada8040"
