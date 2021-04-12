@@ -20,4 +20,4 @@ jobs:
         app_name: ${{ secrets.HEROKU_APP_NAME }} # you aplication name
         dockerfile_path: '~/linaro' # set the path to the folder where the Dockerfile is located
         options: '' # Docker Build Options
-        formation: 'image' # Docker Dyno Formation. By default is web
+        formation: 'web' # Docker Dyno Formation. By default is web
