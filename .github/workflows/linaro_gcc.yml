@@ -22,4 +22,5 @@ jobs:
         usedocker: true
         appdir: linaro
         branch: master
-        docker_build_args: --rm --force-rm -t armada8040:linaro_gcc .
+        docker_build_args: -t armada8040:linaro_gcc --recursive
+        dontuseforce: true
