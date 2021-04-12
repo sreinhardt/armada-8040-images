@@ -21,6 +21,7 @@ jobs:
         dockerfile_path: 'linaro/dockerfile' # set the path to the folder where the Dockerfile is located
         usedocker: true
         appdir: linaro
-        branch: master
+        remote_branch: "main"
         docker_build_args: -t armada8040:linaro_gcc --recursive
         dontuseforce: true
+        stack: "armada8040"
