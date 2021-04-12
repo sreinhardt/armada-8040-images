@@ -1,0 +1,17 @@
+nom : Deploy
+
+on :
+   pousser :
+     branches :
+      - maître
+
+jobs :
+   build :
+     runs-on : ubuntu-dernières 
+    étapes :
+      - utilise : actions / checkout @ v2 
+      - utilise : akhileshns/heroku-deploy@v3.12.12 # C'est l'action 
+        avec :
+           heroku_api_key : $ {{secrets.HEROKU_API_KEY}} 
+          heroku_app_name : "armada-8040"  # Doit être unique dans Heroku 
+          heroku_email : "chpujol+heroku@gmail.com"
