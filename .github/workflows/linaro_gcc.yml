@@ -19,6 +19,6 @@ jobs:
         api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
         app_name: ${{ secrets.HEROKU_APP_NAME }} # you aplication name
         dockerfile_path: 'dockerfile' # set the path to the folder where the Dockerfile is located
-        working-directory: ./linaro
+        working-directory: ./work/linaro
         options: '' # Docker Build Options
         formation: 'web' # Docker Dyno Formation. By default is web
