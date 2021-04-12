@@ -20,11 +20,11 @@ jobs:
         heroku_email: ${{ secrets.HEROKU_EMAIL }} # your heroku email
         heroku_api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
         heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} # you aplication name
-        dockerfile_path: 'linaro/dockerfile' # set the path to the folder where the Dockerfile is located
+        dockerfile_path: './dockerfile' # set the path to the folder where the Dockerfile is located
         usedocker: true
         appdir: linaro
         remote_branch: "main"
         #docker_build_args: '-t armada8040:linaro_gcc'
-        dontuseforce: true
+        #dontuseforce: true
         stack: 'heroku-20'
         region: 'eu'
