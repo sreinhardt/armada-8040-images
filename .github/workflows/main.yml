@@ -13,5 +13,5 @@ jobs :
       - utilise : akhileshns/heroku-deploy@v3.12.12 # C'est l'action 
         avec :
            heroku_api_key : $ {{secrets.HEROKU_API_KEY}} 
-          heroku_app_name : "armada-8040"  # Doit être unique dans Heroku 
-          heroku_email : "chpujol+heroku@gmail.com"
+          heroku_app_name : ${{ secrets.HEROKU_APP_NAME }} # you aplication name
+          heroku_email : ${{ secrets.HEROKU_EMAIL }} # your heroku email
