@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Check Out Repo
       uses: actions/checkout@v2
-    - mame: Push to Heroku
+    - name: Push to Heroku
       run: git push heroku master
     - name: Build, Push and Deploy to Heroku # set whatever name you want to this step
       id: heroku
