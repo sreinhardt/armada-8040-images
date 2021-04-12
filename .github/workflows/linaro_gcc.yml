@@ -25,3 +25,4 @@ jobs:
         docker_build_args: -t armada8040:linaro_gcc
         dontuseforce: true
         #stack: "armada8040"
+        region: eu
