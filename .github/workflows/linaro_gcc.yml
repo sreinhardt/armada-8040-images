@@ -28,5 +28,5 @@ jobs:
         remote_branch: "main"
         #docker_build_args: '-t armada8040:linaro_gcc'
         #dontuseforce: true
-        stack: 'heroku-20'
-        region: 'eu'
+        stack: ${{ secrets.HEROKU_STACK }}
+        region: ${{ secrets.HEROKU_REGION }}
