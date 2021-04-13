@@ -1,0 +1,32 @@
+name: linaro_gcc
+
+on:
+  push:
+    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out Repo
+      uses: actions/checkout@v2
+    - name: Pull to Heroku
+      run: |
+        git clone https://github.com/mipsou/armada-8040-images.git
+        cd linaro
+    - name: Build, Push and Deploy to Heroku # set whatever name you want to this step
+      id: heroku
+      uses: akhileshns/heroku-deploy@v3.12.12 # use the latest version of the action
+      with:
+        heroku_email: ${{ secrets.HEROKU_EMAIL }} # your heroku email
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
+        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} # you aplication name
+        dockerfile_path: './dockerfile' # set the path to the folder where the Dockerfile is located
+        usedocker: true
+        appdir: linaro
+        remote_branch: "main"
+        #docker_build_args: '-t armada8040:linaro_gcc'
+        #dontuseforce: true
+        stack: ${{ secrets.HEROKU_STACK }}
+        region: ${{ secrets.HEROKU_REGION }}

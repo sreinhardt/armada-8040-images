@@ -8,6 +8,7 @@ This repo contains a series of dockerfiles and submodules for external code need
 cd linaro
 docker build --rm --force-rm -t armada8040:linaro_gcc .
 ```
+[![linaro_gcc](https://github.com/mipsou/armada-8040-images/actions/workflows/linaro_gcc.yml/badge.svg)](https://github.com/mipsou/armada-8040-images/actions/workflows/linaro_gcc.yml)
 
 ### Building U-Boot
 
