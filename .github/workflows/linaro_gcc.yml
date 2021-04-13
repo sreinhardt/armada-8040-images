@@ -13,8 +13,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Pull to Heroku
       run: |
-      git clone https://github.com/mipsou/armada-8040-images.git
-      cd linaro
+        git clone https://github.com/mipsou/armada-8040-images.git
+        cd linaro
     - name: Build, Push and Deploy to Heroku # set whatever name you want to this step
       id: heroku
       uses: akhileshns/heroku-deploy@v3.12.12 # use the latest version of the action
